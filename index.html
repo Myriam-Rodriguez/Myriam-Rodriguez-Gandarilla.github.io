@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tu Nombre · Perfiles académicos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    --bg: #eef2f4;
+    --surface: #ffffff;
+    --ink: #14262e;
+    --muted: #5a6b73;
+    --line: #cfd9de;
+    --focus: #0b6e8a;
+    --orcid: #a6ce39;
+    --linkedin: #0a66c2;
+    --rg: #00ccbb;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0f1a1f;
+      --surface: #16252c;
+      --ink: #e8f0f3;
+      --muted: #93a6ae;
+      --line: #28404a;
+      --focus: #5cc4e0;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0f1a1f;
+    --surface: #16252c;
+    --ink: #e8f0f3;
+    --muted: #93a6ae;
+    --line: #28404a;
+    --focus: #5cc4e0;
+  }
+  html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+  *, *::before, *::after { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    line-height: 1.5;
+    min-height: 100vh;
+  }
+  main {
+    max-width: 34rem;
+    margin: 0 auto;
+    padding: 4rem 1.25rem 3rem;
+  }
+  h1 {
+    font-family: "Newsreader", Georgia, "Times New Roman", serif;
+    font-weight: 600;
+    font-size: clamp(2.4rem, 8vw, 3.4rem);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: 0 0 0.6rem;
+  }
+  .role {
+    font-family: "Newsreader", Georgia, serif;
+    font-style: italic;
+    font-size: 1.2rem;
+    color: var(--muted);
+    margin: 0 0 0.25rem;
+  }
+  .bio {
+    color: var(--muted);
+    margin: 0 0 2.5rem;
+    max-width: 30rem;
+  }
+  ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.75rem; }
+  a.link {
+    display: grid;
+    grid-template-columns: 0.5rem 1fr auto;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.1rem 1.25rem 1.1rem 0;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    color: inherit;
+    text-decoration: none;
+    overflow: hidden;
+  }
+  a.link .bar { align-self: stretch; background: var(--c); }
+  a.link .name { font-weight: 600; font-size: 1.05rem; }
+  a.link .desc { color: var(--muted); font-size: 0.9rem; }
+  a.link .go { color: var(--muted); font-size: 0.85rem; }
+  a.link:hover { border-color: var(--c); }
+  a.link:hover .go { color: var(--ink); }
+  a.link:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+  footer { margin-top: 2.5rem; color: var(--muted); font-size: 0.85rem; }
+  @media (prefers-reduced-motion: no-preference) {
+    a.link { transition: border-color 0.15s; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <h1>Tu Nombre Apellido</h1>
+  <p class="role">Investigador/a en tu área · Tu institución</p>
+  <p class="bio">Una o dos líneas sobre tu trabajo. Aquí puedes reunir todos tus perfiles académicos y profesionales en un solo lugar.</p>
+
+  <ul>
+    <li>
+      <a class="link" style="--c: var(--orcid)" href="https://orcid.org/0000-0000-0000-0000" target="_blank" rel="noopener">
+        <span class="bar"></span>
+        <span><span class="name">ORCID</span><br><span class="desc">Identificador y lista de publicaciones</span></span>
+        <span class="go">Abrir</span>
+      </a>
+    </li>
+    <li>
+      <a class="link" style="--c: var(--rg)" href="https://www.researchgate.net/profile/Tu-Nombre" target="_blank" rel="noopener">
+        <span class="bar"></span>
+        <span><span class="name">ResearchGate</span><br><span class="desc">Artículos, preprints y colaboraciones</span></span>
+        <span class="go">Abrir</span>
+      </a>
+    </li>
+    <li>
+      <a class="link" style="--c: var(--linkedin)" href="https://www.linkedin.com/in/tu-usuario" target="_blank" rel="noopener">
+        <span class="bar"></span>
+        <span><span class="name">LinkedIn</span><br><span class="desc">Trayectoria profesional y contacto</span></span>
+        <span class="go">Abrir</span>
+      </a>
+    </li>
+  </ul>
+
+  <footer>Contacto: tu.correo@institucion.edu</footer>
+</main>
+</body>
+</html>
